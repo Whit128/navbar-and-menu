@@ -24,10 +24,14 @@ $(document).ready(function(){
             $("body").css('overflow-y', 'hidden');
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
-            $("#page__fade").css('opacity', '1');
             $("#page__fade").css('display', 'block');
+            setTimeout( // makes sure that CSS3 animation plays 
+                function() {
+                    $("#page__fade").css('opacity', '1');
+                }, 0);
+            
             menu__open=1;
-        } else {
+        } else if (menu__open == 1 && $("#page__fade").css('opacity') == '1') {
             $("#links > ul").css('overflow-y', 'hidden');
             $("body").css('overflow-y', 'auto');
             $("#links > ul").css('width', '0');
