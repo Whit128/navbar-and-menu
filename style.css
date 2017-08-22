@@ -191,6 +191,9 @@ h3 {
 
 /* The css below resets the top right menu when making window big again */
 @media screen and (min-width: 761px) {
+    body {
+        overflow-y: auto  !important;
+    }
     #page__fade {
         display: none !important;
     }
