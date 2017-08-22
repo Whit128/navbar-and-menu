@@ -19,7 +19,7 @@ $(document).ready(function(){
     var menu__open = 0;
     function menu__toggle() {
         event.preventDefault();
-        if (menu__open == 0) {
+        if (menu__open == 0 && $("#page__fade").css('opacity') == '0') {
             $("#links > ul").css('overflow-y', 'auto');
             $("body").css('overflow-y', 'hidden');
             $("#links > ul").css('width', '250px');
