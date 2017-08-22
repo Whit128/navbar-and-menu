@@ -117,8 +117,13 @@ h3 {
     height: 120vh;
     background-color: #777;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    opacity: 0;
+    display: block;
     z-index: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .menu__button {

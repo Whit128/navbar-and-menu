@@ -24,14 +24,21 @@ $(document).ready(function(){
             $("body").css('overflow-y', 'hidden');
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
-            $("#page__fade").stop().fadeIn(200);
+            $("#page__fade").css('opacity', '1');
+            $("#page__fade").css('display', 'block');
             menu__open=1;
         } else {
             $("#links > ul").css('overflow-y', 'hidden');
             $("body").css('overflow-y', 'auto');
             $("#links > ul").css('width', '0');
             $("#links").css('color', '#333');
-            $("#page__fade").stop().fadeOut(200);
+            $("#page__fade").css('opacity', '0');
+
+            setTimeout(
+                function() {
+                    $("#page__fade").css('display', 'none');
+                }, 200);
+
             menu__open=0;
         }
         return false;
