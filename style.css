@@ -29,10 +29,12 @@ body {
 #navbar a {
     color: inherit;
     text-decoration: none;
+    padding: 16px 0 16px 0;
+    opacity: 0.8;
 }
 
 #navbar a:hover {
-    opacity: 0.8;
+    opacity: 1.0;
 }
 
 #navbar a:active {
@@ -99,7 +101,7 @@ h3 {
 
 #links ul li {
     display: inline;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 #links ul li span {
