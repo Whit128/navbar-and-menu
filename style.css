@@ -29,12 +29,6 @@ body {
 #navbar a {
     color: inherit;
     text-decoration: none;
-    padding: 16px 0 16px 0;
-    opacity: 0.8;
-}
-
-#navbar a:hover {
-    opacity: 1.0;
 }
 
 #navbar a:active {
@@ -102,6 +96,12 @@ h3 {
 #links ul li {
     display: inline;
     margin-left: 20px;
+    padding: 16px 0 16px 0;
+    opacity: 0.8;
+}
+
+#links ul li:hover {
+    opacity: 1.0;
 }
 
 #links ul li span {
@@ -162,6 +162,7 @@ h3 {
         min-width: 500px;
         color: #1e1e1e;
         text-align: left;
+        padding: 0;
     }
 
     #navbar ul li:active {
