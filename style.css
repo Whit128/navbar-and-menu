@@ -150,10 +150,6 @@ h3 {
         transition-timing-function: ease;
     }
 
-    #header {
-        height: 440px;
-    }
-
     #navbar ul li {
         display: block;
         opacity: 0.8;
