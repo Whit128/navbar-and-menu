@@ -6,14 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Parallax scrolling header
-function ParallaxAnimation( el ) {
-    let scrollTop = document.body.scrollTop;
-
-    el.style.marginTop = (scrollTop / 3) + 'px';
-    el.style.opacity = (1 - scrollTop / el.offsetHeight );
-};
-
 $(document).ready(function(){
     // Menu
     var menu__open = 0;
