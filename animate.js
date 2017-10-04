@@ -1,11 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const moving__background = document.querySelector('#header__background');
-    
-    window.addEventListener( 'scroll', function() {
-        ParallaxAnimation( moving__background );
-    });
-});
-
 $(document).ready(function(){
     // Menu
     var menu__open = 0;
