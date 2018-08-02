@@ -166,7 +166,7 @@ h3 {
 @media screen and (max-width: 760px) {
     #links ul {
         position: absolute;
-        right:0;
+        right: 0;
         top: 0px;
         padding-left: 0;
         width: 0;
@@ -178,16 +178,16 @@ h3 {
         transition-timing-function: ease;
     }
 
-    #navbar ul li {
+    #links ul li {
         display: block;
-        opacity: 0.8;
         min-width: 500px;
         color: #1e1e1e;
         text-align: left;
-        padding: 0;
+        padding: 0 0 0 20px;
+        margin-left: 0;
     }
 
-    #navbar ul li:active {
+    #links ul li:active {
         background-color: #eeeeee;
     }
 
