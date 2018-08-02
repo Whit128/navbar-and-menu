@@ -30,7 +30,7 @@ body {
     color: #004c8c;
 }
 
-@media screen and (max-width: 369px) {
+@media screen and (max-width: 385px) {
     #davidwhitcome__code {
         line-height: 25px;
     }
