@@ -8,6 +8,7 @@ html, body {
 
 body {
     background: #eee;
+    -webkit-text-size-adjust: 100%;
 }
 
 #davidwhitcome__code {
