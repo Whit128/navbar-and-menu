@@ -236,15 +236,15 @@ h3 {
 /* ios 11 - 11.2 */
 @supports (padding-top: constant(safe-area-inset-top)) {
     .container {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
+        padding-left: max(20px, constant(safe-area-inset-left));
+        padding-right: max(20px, constant(safe-area-inset-right));
     }
 }
 
 /* ios versions higher than 11.2 */
 @supports (padding-top: env(safe-area-inset-top)) {
     .container {
-        padding-left: env(safe-area-inset-left);
-        padding-right: env(safe-area-inset-right);
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
     }
 }
