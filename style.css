@@ -19,11 +19,12 @@ body {
     z-index: 1;
     background-color: #e0e0e0;
     text-align: center;
-    line-height: 50px;
     color: #222222;
     text-decoration: none;
     font-size: 0.8em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 #davidwhitcome__code a {
@@ -239,6 +240,10 @@ h3 {
         padding-left: max(20px, constant(safe-area-inset-left));
         padding-right: max(20px, constant(safe-area-inset-right));
     }
+
+    #davidwhitcome__code {
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
 }
 
 /* ios versions higher than 11.2 */
@@ -246,5 +251,9 @@ h3 {
     .container {
         padding-left: max(20px, env(safe-area-inset-left));
         padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    #davidwhitcome__code {
+        padding-bottom: env(safe-area-inset-bottom);
     }
 }
