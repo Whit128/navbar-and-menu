@@ -58,3 +58,31 @@ $(document).on('click', 'a', function(event){
     }
     return false;
 });
+
+
+/////// Changing navbar position
+var navbar;
+var position = window.scrollY;
+var scroll;
+var navbarHeight;
+var navbarMargin;
+
+window.addEventListener("load", function () {
+    navbar = document.getElementById("navbar");
+    navbarHeight = parseInt(window.getComputedStyle(navbar).getPropertyValue('height')) + parseInt(window.getComputedStyle(navbar).getPropertyValue('border-bottom'));
+});
+
+window.addEventListener('scroll', NavbarLocation);
+
+function NavbarLocation() {
+    navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    scroll = window.scrollY;
+    if (scroll > position) {
+        if (navbarMargin > -54) {
+            navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
+        } 
+    } else if (navbarMargin < 0) {
+            navbar.style.marginTop = navbarMargin + (position - scroll) + "px";
+    }
+    position = scroll;
+};
