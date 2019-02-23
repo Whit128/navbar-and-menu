@@ -29,7 +29,7 @@ function NavbarLocation() {
         }
 
         if (navbarMargin < navbarNegativeHeight) {
-            navbar.style.marginTop = "-54px";
+            navbar.style.marginTop = navbarNegativeHeight + "px";
         }
 
         if (navbarMargin > 0) {
