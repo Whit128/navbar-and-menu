@@ -9,6 +9,7 @@ $(document).ready(function(){
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
             $("#page__fade").css('display', 'block');
+            $("#navbar").css('margin-top', '0');
             setTimeout( // makes sure that CSS3 animation plays 
                 function() {
                     $("#page__fade").css('opacity', '1');
@@ -69,7 +70,9 @@ var navbarMargin;
 
 window.addEventListener("load", function () {
     navbar = document.getElementById("navbar");
-    navbarHeight = parseInt(window.getComputedStyle(navbar).getPropertyValue('height')) + parseInt(window.getComputedStyle(navbar).getPropertyValue('border-bottom'));
+    navbarNegativeHeight = (parseInt(window.getComputedStyle(navbar).getPropertyValue('height')) + parseInt(window.getComputedStyle(navbar).getPropertyValue('border-bottom'))) * -1;
+    navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    NavbarLocation();
 });
 
 window.addEventListener('scroll', NavbarLocation);
@@ -78,11 +81,19 @@ function NavbarLocation() {
     navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
     scroll = window.scrollY;
     if (scroll > position) {
-        if (navbarMargin > -54) {
+        if (navbarMargin > navbarNegativeHeight) {
             navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
         } 
     } else if (navbarMargin < 0) {
             navbar.style.marginTop = navbarMargin + (position - scroll) + "px";
     }
     position = scroll;
+
+    if (navbarMargin < navbarNegativeHeight) {
+        navbar.style.marginTop = "-54px";
+    }
+
+    if (navbarMargin > 0) {
+        navbar.style.marginTop = "0";
+    }
 };
