@@ -38,5 +38,4 @@ function NavbarLocation() {
 
         position = scroll;
     }
-    
 };
