@@ -83,7 +83,6 @@ function NavbarLocation() {
     
     scroll = window.pageYOffset;
     if (scroll > position) {
-        console.log(navbarNegativeHeight);
         if (navbarMargin > navbarNegativeHeight) {
             navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
         } 
