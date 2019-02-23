@@ -63,25 +63,27 @@ $(document).on('click', 'a', function(event){
 
 /////// Changing navbar position
 var navbar;
-var position = window.scrollY;
+var position = window.pageYOffset;
 var scroll;
 var navbarHeight;
 var navbarMargin;
 
 document.addEventListener("DOMContentLoaded", function () {
     navbar = document.getElementById("navbar");
-    navbarNegativeHeight = (parseInt(window.getComputedStyle(navbar).getPropertyValue('height')) + parseInt(window.getComputedStyle(navbar).getPropertyValue('border-bottom'))) * -1;
-    navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    navbarStyles = window.getComputedStyle(navbar);
+    navbarNegativeHeight = (parseFloat(navbarStyles.getPropertyValue('height')) + parseFloat(navbarStyles.getPropertyValue('border-bottom-width'))) * -1;
+    navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
     NavbarLocation();
 });
 
 window.addEventListener('scroll', NavbarLocation);
 
 function NavbarLocation() {
-    navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
     
-    scroll = window.scrollY;
+    scroll = window.pageYOffset;
     if (scroll > position) {
+        console.log(navbarNegativeHeight);
         if (navbarMargin > navbarNegativeHeight) {
             navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
         } 
