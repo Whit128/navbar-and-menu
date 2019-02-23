@@ -68,7 +68,7 @@ var scroll;
 var navbarHeight;
 var navbarMargin;
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
     navbar = document.getElementById("navbar");
     navbarNegativeHeight = (parseInt(window.getComputedStyle(navbar).getPropertyValue('height')) + parseInt(window.getComputedStyle(navbar).getPropertyValue('border-bottom'))) * -1;
     navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
@@ -79,6 +79,7 @@ window.addEventListener('scroll', NavbarLocation);
 
 function NavbarLocation() {
     navbarMargin = parseInt(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    
     scroll = window.scrollY;
     if (scroll > position) {
         if (navbarMargin > navbarNegativeHeight) {
