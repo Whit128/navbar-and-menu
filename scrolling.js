@@ -16,23 +16,27 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener('scroll', NavbarLocation);
 
 function NavbarLocation() {
-    navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+    if (navbar !== null) {
+        navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
+        scroll = window.pageYOffset;
+
+        if (scroll > position) {
+            if (navbarMargin > navbarNegativeHeight) {
+                navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
+            } 
+        } else if (navbarMargin < 0) {
+                navbar.style.marginTop = navbarMargin + (position - scroll) + "px";
+        }
+
+        if (navbarMargin < navbarNegativeHeight) {
+            navbar.style.marginTop = "-54px";
+        }
+
+        if (navbarMargin > 0) {
+            navbar.style.marginTop = "0";
+        }
+
+        position = scroll;
+    }
     
-    scroll = window.pageYOffset;
-    if (scroll > position) {
-        if (navbarMargin > navbarNegativeHeight) {
-            navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
-        } 
-    } else if (navbarMargin < 0) {
-            navbar.style.marginTop = navbarMargin + (position - scroll) + "px";
-    }
-    position = scroll;
-
-    if (navbarMargin < navbarNegativeHeight) {
-        navbar.style.marginTop = "-54px";
-    }
-
-    if (navbarMargin > 0) {
-        navbar.style.marginTop = "0";
-    }
 };
