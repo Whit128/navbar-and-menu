@@ -9,6 +9,7 @@ $(document).ready(function(){
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
             $("#page__fade").css('display', 'block');
+            $("#navbar").css('margin-top', '0');
             setTimeout( // makes sure that CSS3 animation plays 
                 function() {
                     $("#page__fade").css('opacity', '1');
