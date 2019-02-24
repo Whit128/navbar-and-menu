@@ -8,12 +8,10 @@ $(document).ready(function(){
             $("body").css('overflow-y', 'hidden');
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
-            $("#page__fade").css('display', 'block');
+            $("#page__fade").css('visibility', 'visible');
             $("#navbar").css('margin-top', '0');
-            setTimeout( // makes sure that CSS3 animation plays 
-                function() {
-                    $("#page__fade").css('opacity', '1');
-                }, 0);
+
+            $("#page__fade").css('opacity', '1');
             
             menu__open=1;
         } else if (menu__open == 1 && $("#page__fade").css('opacity') == '1') {
@@ -25,7 +23,7 @@ $(document).ready(function(){
 
             setTimeout(
                 function() {
-                    $("#page__fade").css('display', 'none');
+                    $("#page__fade").css('visibility', 'hidden');
                 }, 200);
 
             menu__open=0;
