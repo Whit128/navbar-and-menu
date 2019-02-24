@@ -25,18 +25,12 @@ function NavbarLocation() {
 
         if (scroll > position) { // Scrolling down  
             if (navbarMargin > navbarNegativeHeight) {
-                navbar.style.marginTop = navbarMargin - (scroll - position) + "px";
+                navbar.style.marginTop = Math.max(navbarNegativeHeight, navbarMargin - (scroll - position)) + "px";
             } 
-            else if (navbarMargin < navbarNegativeHeight) { // Just in case
-                navbar.style.marginTop = navbarNegativeHeight + "px";
-            }
         }
         else if (scroll < position) { // Scrolling up
             if (navbarMargin < 0) {
-                    navbar.style.marginTop = navbarMargin + (position - scroll) + "px";
-            }
-            else if (navbarMargin > 0) { // Just in case
-                navbar.style.marginTop = "0";
+                    navbar.style.marginTop = Math.min(0, navbarMargin + (position - scroll)) + "px";
             }
         }
         
