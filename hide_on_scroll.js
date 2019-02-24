@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener('scroll', NavbarLocation);
 
 function NavbarLocation() {
-    if (navbar !== null) {
+    scroll = window.pageYOffset;
+    if (navbar !== null && scroll >= 0) {
         navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
-        scroll = window.pageYOffset;
 
         if (scroll > position) { // Scrolling down  
             if (navbarMargin > navbarNegativeHeight) {
