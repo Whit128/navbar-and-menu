@@ -8,6 +8,7 @@ $(document).ready(function(){
             $("body").css('overflow-y', 'hidden');
             $("#links > ul").css('width', '250px');
             $("#links").css('color', '#fff');
+            $("#page__fade").css('visibility', 'visible');
             $("#navbar").css('margin-top', '0');
 
             $("#page__fade").css('opacity', '1');
@@ -19,6 +20,11 @@ $(document).ready(function(){
             $("#links > ul").css('width', '0');
             $("#links").css('color', '#333');
             $("#page__fade").css('opacity', '0');
+
+            setTimeout(
+                function() {
+                    $("#page__fade").css('visibility', 'hidden');
+                }, 200);
 
             menu__open=0;
         }
