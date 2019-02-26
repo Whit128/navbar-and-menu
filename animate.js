@@ -4,9 +4,9 @@ $(document).ready(function(){
     function menu__toggle() {
         event.preventDefault();
         if (menu__open == 0 && $("#page__fade").css('opacity') == '0') {
-            $("#links > ul").css('overflow-y', 'auto');
+            $("#links > #hamburger__menu").css('overflow-y', 'auto');
             $("body").css('overflow-y', 'hidden');
-            $("#links > ul").css('width', '250px');
+            $("#links > #hamburger__menu").css('width', '250px');
             $("#links").css('color', '#fff');
             $("#page__fade").css('display', 'block');
             $("#navbar").css('margin-top', '0');
@@ -17,9 +17,9 @@ $(document).ready(function(){
             
             menu__open=1;
         } else if (menu__open == 1 && $("#page__fade").css('opacity') == '1') {
-            $("#links > ul").css('overflow-y', 'hidden');
+            $("#links > #hamburger__menu").css('overflow-y', 'hidden');
             $("body").css('overflow-y', 'auto');
-            $("#links > ul").css('width', '0');
+            $("#links > #hamburger__menu").css('width', '0');
             $("#links").css('color', '#333');
             $("#page__fade").css('opacity', '0');
 
@@ -37,7 +37,7 @@ $(document).ready(function(){
         menu__toggle();
     });
 
-    $("#links ul li").click(function(){
+    $("#links #hamburger__menu li").click(function(){
         if ($(window).width() <= 760) {
             menu__toggle();
         }
