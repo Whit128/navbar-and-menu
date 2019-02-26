@@ -37,7 +37,7 @@ $(document).ready(function(){
         menu__toggle();
     });
 
-    $("#links #hamburger__menu li").click(function(){
+    $("#links #hamburger__menu li a").click(function(){
         if ($(window).width() <= 760) {
             menu__toggle();
         }
