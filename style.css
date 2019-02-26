@@ -189,8 +189,12 @@ h3 {
         display: block;
         color: #1e1e1e;
         text-align: left;
-        padding: 0 0 0 20px;
+        padding: 0;
         margin-left: 0;
+    }
+
+    #hamburger__menu li a {
+        padding-left: 20px;
     }
 
     #hamburger__menu li:active {
