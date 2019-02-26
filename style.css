@@ -120,9 +120,13 @@ h3 {
 }
 
 #hamburger__menu li {
-    display: inline;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+#hamburger__menu li a {
+    display: block;
     margin-left: 20px;
-    padding: 16px 0 16px 0;
     opacity: 0.8;
 }
 
@@ -188,6 +192,7 @@ h3 {
 
     #hamburger__menu li a {
         padding-left: 20px;
+        margin-left: 0;
     }
 
     #hamburger__menu li a:active {
