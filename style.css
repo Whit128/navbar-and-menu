@@ -160,6 +160,10 @@ h3 {
 }
 
 @media screen and (max-width: 760px) {
+    #navbar > .container {
+        padding-left: 0;
+    }
+
     #links {
         float: left;
     }
@@ -218,6 +222,7 @@ h3 {
     body {
         overflow-y: auto !important;
     }
+
     #page__fade {
         display: none !important;
     }
