@@ -98,7 +98,7 @@ h3 {
 #links {
     margin: 0;
     line-height: 53px;
-    float: left;
+    float: right;
     transition: 0.2s color;
 }
 
@@ -160,6 +160,10 @@ h3 {
 }
 
 @media screen and (max-width: 760px) {
+    #links {
+        float: left;
+    }
+
     #links ul {
         position: absolute;
         top: 0px;
