@@ -87,7 +87,7 @@ h3 {
 #logo {
     margin: 0;
     line-height: 53px;
-    float: left;
+    white-space: nowrap;
 }
 
 #logo h1 {
