@@ -41,6 +41,7 @@ body {
 #navbar {
     top: 0;
     background: #fff;
+    background: rgba(255, 255, 255, 1);
     width: 100%;
     height: auto;
     border-bottom: 1px solid #B2B2B2;
@@ -172,12 +173,13 @@ h3 {
 
     #hamburger__menu {
         position: absolute;
-        top: 0px;
+        top: 0;
         width: 0;
         overflow: hidden;
         box-sizing: border-box;
         box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.2);
         background-color: #fff;
+        background: rgba(255, 255, 255, 1);
         transition: 0.2s width;
         transition-timing-function: ease;
     }
@@ -266,5 +268,14 @@ h3 {
 
     #davidwhitcome__code {
         padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* blur effect for browsers that support it (Safari, Edge, etc) */
+@supports ((backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))) {
+    #navbar {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 }
