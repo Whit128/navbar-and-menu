@@ -42,7 +42,7 @@ body {
     top: 0;
     background: #fff;
     width: 100%;
-    height: 53px;
+    height: auto;
     border-bottom: 1px solid #B2B2B2;
     position: fixed;
     z-index: 1;
@@ -87,7 +87,7 @@ h3 {
 #logo {
     margin: 0;
     line-height: 53px;
-    float: left;
+    white-space: nowrap;
 }
 
 #logo h1 {
@@ -108,27 +108,29 @@ h3 {
     display: none;
 }
 
-#links ul {
+#hamburger__menu {
     margin: 0;
     display: block;
-    list-style: none;
     font-size: 1em;
-    float: right;
     z-index: 2;
 }
 
-#links ul li {
-    display: inline;
-    margin-left: 20px;
-    padding: 16px 0 16px 0;
+#hamburger__menu ul {
+    margin: 0;
+}
+
+#hamburger__menu li {
+    display: inline-block;
     opacity: 0.8;
 }
 
-#links ul li:hover {
-    opacity: 1.0;
+#hamburger__menu li a {
+    display: block;
+    margin-left: 20px;
+    opacity: 0.8;
 }
 
-#links ul li span {
+#hamburger__menu li span {
     display: none;
 }
 
@@ -154,19 +156,23 @@ h3 {
 
 .menu__button {
     display: none;
-    right: 0;
-    position: absolute;
+    position: relative;
     font-size: 20px;
     padding: 0 20px 0 20px;
-    float: right;
 }
 
 @media screen and (max-width: 760px) {
-    #links ul {
+    #navbar > .container {
+        padding: 0;
+    }
+
+    #links {
+        float: left;
+    }
+
+    #hamburger__menu {
         position: absolute;
-        right: 0;
         top: 0px;
-        padding-left: 0;
         width: 0;
         overflow: hidden;
         box-sizing: border-box;
@@ -176,16 +182,20 @@ h3 {
         transition-timing-function: ease;
     }
 
-    #links ul li {
+    #hamburger__menu li {
         display: block;
-        min-width: 500px;
         color: #1e1e1e;
         text-align: left;
-        padding: 0 0 0 20px;
+        padding: 0;
         margin-left: 0;
     }
 
-    #links ul li:active {
+    #hamburger__menu li a {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+
+    #hamburger__menu li a:active {
         background-color: #eeeeee;
     }
 
@@ -194,16 +204,20 @@ h3 {
         z-index: 3;
     }
 
-    #links ul {
+    #hamburger__menu {
         height: 100vh;
         overflow-y: hidden;
     }
 
-    #links ul li i {
+    #hamburger__menu ul {
+        padding: 0;
+    }
+
+    #hamburger__menu li i {
         display: none;
     }
 
-    #links ul li span {
+    #links #hamburger__menu li span {
         display: inline;
     }
 
@@ -215,8 +229,9 @@ h3 {
 /* The css below resets the top right menu when making window big again */
 @media screen and (min-width: 761px) {
     body {
-        overflow-y: auto  !important;
+        overflow-y: auto !important;
     }
+
     #page__fade {
         display: none !important;
     }
@@ -225,7 +240,7 @@ h3 {
         color: inherit !important;
     }
 
-    #links ul {
+    #links #hamburger__menu {
         width: auto !important;
     }
 }
