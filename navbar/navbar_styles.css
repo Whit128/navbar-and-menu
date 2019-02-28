@@ -1,0 +1,238 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    padding-top: 53px; /* Room for navbar */
+}
+
+#navbar {
+    top: 0;
+    background: #4a148c;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    color: #F5F5F5;
+    font-weight: 400;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.35);
+}
+
+#navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#navbar a:active {
+    opacity: 0.8;
+}
+
+.navbar_container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 0 20px;
+}
+
+#logo {
+    margin: 0;
+    line-height: 53px;
+    white-space: nowrap;
+}
+
+#logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#links {
+    margin: 0;
+    line-height: 53px;
+    float: right;
+    transition: 0.2s color;
+}
+
+#links img {
+    width: 250px;
+    margin: 0;
+    display: none;
+}
+
+#hamburger__menu {
+    margin: 0;
+    display: block;
+    font-size: 1em;
+    z-index: 2;
+}
+
+#hamburger__menu ul {
+    margin: 0;
+}
+
+#hamburger__menu li {
+    display: inline-block;
+}
+
+#hamburger__menu li a {
+    display: block;
+    margin-left: 20px;
+}
+
+#hamburger__menu li span {
+    display: none;
+}
+
+#links i {
+    padding-right: 0px;
+}
+
+#page__fade {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120vh;
+    background-color: #777;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#menu__button {
+    display: none;
+    position: relative;
+    font-size: 20px;
+    padding: 0 20px 0 20px;
+}
+
+h3 {
+    /* A workaround for the scrolling position after clicking a navbar link.
+    Takes into account the navbar. */
+    margin-top: -44px;
+    padding-top: 70px;
+}
+
+/* Active classes */
+.navbar__active {
+    margin-top: 0 !important;
+}
+
+.hamburger__menu__active {
+    overflow-y: auto !important;
+    width: 250px !important;
+}
+
+.page__fade__active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+/* Active classes end */
+
+@media screen and (max-width: 760px) {
+    .navbar_container {
+        padding: 0;
+    }
+
+    #links {
+        float: left;
+    }
+
+    #hamburger__menu {
+        position: absolute;
+        top: 0;
+        width: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        background: rgba(255, 255, 255, 1);
+        transition: 0.2s width;
+        transition-timing-function: ease;
+    }
+
+    #hamburger__menu li {
+        display: block;
+        color: #1e1e1e;
+        text-align: left;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    #hamburger__menu li a {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+
+    #hamburger__menu li a:active {
+        background-color: #eeeeee;
+    }
+
+    #menu__button {
+        display: block;
+        z-index: 3;
+    }
+
+    #hamburger__menu {
+        height: 120vh;
+        overflow-y: hidden;
+    }
+
+    #hamburger__menu ul {
+        padding: 0;
+    }
+
+    #hamburger__menu li i {
+        display: none;
+    }
+
+    #links #hamburger__menu li span {
+        display: inline;
+    }
+
+    #links img {
+        display: block;
+    }
+}
+
+/* The css below resets the hamburger menu when making window big again */
+@media screen and (min-width: 761px) {
+    body {
+        overflow-y: auto !important;
+    }
+
+    #page__fade {
+        pointer-events: none !important;
+        opacity: 0 !important;
+    }
+
+    #links {
+        color: inherit !important;
+    }
+
+    #links #hamburger__menu {
+        width: auto !important;
+    }
+}
+
+/* viewport-fit=cover for apple devices */
+/* ios 11 - 11.2 */
+@supports (padding-top: constant(safe-area-inset-top)) {
+    .navbar_container {
+        padding-left: max(20px, constant(safe-area-inset-left));
+        padding-right: max(20px, constant(safe-area-inset-right));
+    }
+}
+
+/* ios versions higher than 11.2 */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .navbar_container {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
+/* viewport-fit=cover for apple devices end */
