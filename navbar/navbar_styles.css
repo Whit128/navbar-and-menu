@@ -107,11 +107,7 @@ html {
     display: none;
     position: relative;
     font-size: 20px;
-    padding: 0 20px 0 20px;
-}
-
-.locked__scrolling {
-    
+    padding: 0 20px;
 }
 
 h3 {
@@ -137,9 +133,27 @@ h3 {
 }
 /* Active classes end */
 
+/* viewport-fit=cover for apple devices */
+/* ios 11 - 11.2 */
+@supports (padding-top: constant(safe-area-inset-top)) {
+    .navbar_container {
+        padding-left: max(20px, constant(safe-area-inset-left));
+        padding-right: max(20px, constant(safe-area-inset-right));
+    }
+}
+
+/* ios versions higher than 11.2 */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .navbar_container {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
+/* viewport-fit=cover for apple devices end */
+
 @media screen and (max-width: 760px) {
     .navbar_container {
-        padding: 0;
+        padding: 0 !important;
     }
 
     #links {
@@ -208,7 +222,7 @@ h3 {
     body {
         overflow-y: auto !important;
 
-        /* Prevent locked scrolling when resizing after opening hamburger menu */
+        /* Prevent locked scrolling */
         position: initial !important;
         margin-top: 0 !important;
     }
@@ -226,21 +240,3 @@ h3 {
         width: auto !important;
     }
 }
-
-/* viewport-fit=cover for apple devices */
-/* ios 11 - 11.2 */
-@supports (padding-top: constant(safe-area-inset-top)) {
-    .navbar_container {
-        padding-left: max(20px, constant(safe-area-inset-left));
-        padding-right: max(20px, constant(safe-area-inset-right));
-    }
-}
-
-/* ios versions higher than 11.2 */
-@supports (padding-top: env(safe-area-inset-top)) {
-    .navbar_container {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-    }
-}
-/* viewport-fit=cover for apple devices end */
