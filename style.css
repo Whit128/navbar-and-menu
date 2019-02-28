@@ -242,6 +242,7 @@ h3 {
 
     #page__fade {
         pointer-events: none !important;
+        opacity: 0 !important;
     }
 
     #links {
