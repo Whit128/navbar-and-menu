@@ -71,6 +71,7 @@ body {
 #header {
     width: 100%;
     height: 400px;
+    max-height: 70vh;
     background: #4a148c;
     padding-top: 53px; /* Room for navbar */
     color: #F5F5F5; 
