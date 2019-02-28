@@ -21,12 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
             hamburgerMenu.style.overflowY = 'auto';
             document.body.style.overflowY = 'hidden';
             hamburgerMenu.style.width = '250px';
-            pageFade.style.display = 'block';
+            pageFade.style.pointerEvents = 'auto';
             navbar.style.marginTop = '0';
-            setTimeout( // makes sure that CSS3 animation plays 
-                function() {
-                    pageFade.style.opacity = '1';
-                }, 0);
+            pageFade.style.opacity = '1';
             menu__open = 1;
         }
         else if (menu__open == 1  && pageFadeComputedStyle.opacity == '1') {
@@ -34,10 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.style.overflowY = 'auto';
             hamburgerMenu.style.width = '0';
             pageFade.style.opacity = '0';
-            setTimeout(
-                function() {
-                    pageFade.style.display = 'none';
-                }, 200);
+            pageFade.style.pointerEvents = 'none';
+            
             menu__open = 0;
         }
     }
