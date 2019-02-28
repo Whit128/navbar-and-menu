@@ -1,5 +1,6 @@
 html {
     font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -70,21 +71,28 @@ body {
 #header {
     width: 100%;
     height: 400px;
+    max-height: 70vh;
     background: #4a148c;
-    padding-top: 53px;
-    color: #F5F5F5
+    padding-top: 53px; /* Room for navbar */
+    color: #F5F5F5; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
-    font-size: 3.5em;
+    font-size: 3em;
     text-align: center;
 }
 
 h3 {
     font-size: 1.6em;
     text-align: center;
-    margin-top: -78px;
-    padding-top: 78px;
+
+    /* A workaround for the scrolling position after clicking a navbar link.
+    Takes into account the navbar. */
+    margin-top: -44px;
+    padding-top: 70px;
 }
 
 .container p {
@@ -153,7 +161,7 @@ h3 {
     background-color: #777;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    display: none;
+    pointer-events: none;
     z-index: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
@@ -161,12 +169,28 @@ h3 {
     transition: opacity 0.2s ease-in-out;
 }
 
-.menu__button {
+#menu__button {
     display: none;
     position: relative;
     font-size: 20px;
     padding: 0 20px 0 20px;
 }
+
+/* Active classes */
+.navbar__active {
+    margin-top: 0 !important;
+}
+
+.hamburger__menu__active {
+    overflow-y: auto !important;
+    width: 250px !important;
+}
+
+.page__fade__active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+/* Active classes end */
 
 @media screen and (max-width: 760px) {
     #navbar > .container {
@@ -207,13 +231,13 @@ h3 {
         background-color: #eeeeee;
     }
 
-    .menu__button {
+    #menu__button {
         display: block;
         z-index: 3;
     }
 
     #hamburger__menu {
-        height: 100vh;
+        height: 120vh;
         overflow-y: hidden;
     }
 
@@ -241,7 +265,8 @@ h3 {
     }
 
     #page__fade {
-        display: none !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
     }
 
     #links {
