@@ -30,7 +30,7 @@ function NavbarLocation() {
         }
         else if (scroll < position) { // Scrolling up
             if (navbarMargin < 0) {
-                    navbar.style.marginTop = Math.min(0, navbarMargin + (position - scroll)) + "px";
+                navbar.style.marginTop = Math.min(0, navbarMargin + (position - scroll)) + "px";
             }
         }
         

@@ -110,6 +110,10 @@ html {
     padding: 0 20px 0 20px;
 }
 
+.locked__scrolling {
+    
+}
+
 h3 {
     /* A workaround for the scrolling position after clicking a navbar link.
     Takes into account the navbar. */
@@ -203,6 +207,10 @@ h3 {
 @media screen and (min-width: 761px) {
     body {
         overflow-y: auto !important;
+
+        /* Prevent locked scrolling when resizing after opening hamburger menu */
+        position: initial !important;
+        margin-top: 0 !important;
     }
 
     #page__fade {
