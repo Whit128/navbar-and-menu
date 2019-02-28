@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Menu
     var menu__open = 0;
     function menu__toggle() {
-        
         if (menu__open == 0 && window.getComputedStyle(document.getElementById("page__fade")).opacity == '0') {
             document.getElementById("hamburger__menu").style.overflowY = 'auto';
             document.body.style.overflowY = 'hidden';
@@ -31,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById("menu__button").onclick = function(){
+        event.preventDefault();
         menu__toggle();
     };
 
