@@ -161,7 +161,7 @@ h3 {
     transition: opacity 0.2s ease-in-out;
 }
 
-.menu__button {
+#menu__button {
     display: none;
     position: relative;
     font-size: 20px;
@@ -207,13 +207,13 @@ h3 {
         background-color: #eeeeee;
     }
 
-    .menu__button {
+    #menu__button {
         display: block;
         z-index: 3;
     }
 
     #hamburger__menu {
-        height: 100vh;
+        height: 120vh;
         overflow-y: hidden;
     }
 
