@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var hamburgerMenu = document.getElementById("hamburger__menu");
     var pageFade = document.getElementById("page__fade");
     var pageFadeComputedStyle = window.getComputedStyle(pageFade);
-    var hamburgerMenuLinks = hamburgerMenu.getElementsByTagName('a');
 
+    var hamburgerMenuLinks = hamburgerMenu.getElementsByTagName('a');
     for (a = 0; a < hamburgerMenuLinks.length; a++) {
         hamburgerMenuLinks[a].onclick = function(){
             if (window.innerWidth <= 760)
@@ -18,31 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function menu__toggle() {
         if (menu__open == 0 && pageFadeComputedStyle.opacity == '0') {
-            hamburgerMenu.style.overflowY = 'auto';
+            hamburgerMenu.classList.add('hamburger__menu__active');
+            pageFade.classList.add('page__fade__active');
+            navbar.classList.add('navbar__active');
+            
             document.body.style.overflowY = 'hidden';
-            hamburgerMenu.style.width = '250px';
-            pageFade.style.pointerEvents = 'auto';
-            navbar.style.marginTop = '0';
-            pageFade.style.opacity = '1';
-            menu__open = 1;
+            menu__open = 1;  
         }
         else if (menu__open == 1  && pageFadeComputedStyle.opacity == '1') {
-            hamburgerMenu.style.overflowY = 'hidden';
+            hamburgerMenu.classList.remove('hamburger__menu__active');
+            pageFade.classList.remove('page__fade__active');
+            navbar.classList.remove('navbar__active');
+
             document.body.style.overflowY = 'auto';
-            hamburgerMenu.style.width = '0';
-            pageFade.style.opacity = '0';
-            pageFade.style.pointerEvents = 'none';
-            
-            menu__open = 0;
+            menu__open = 0;    
         }
     }
 
-    menuButton.onclick = function(){
-        event.preventDefault();
-        menu__toggle();
-    };
-
-    pageFade.onclick = function(){
-        menu__toggle();
-    };  
+    menuButton.onclick = function(){ event.preventDefault(); menu__toggle(); };
+    pageFade.onclick = menu__toggle;
 });

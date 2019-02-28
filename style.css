@@ -168,6 +168,22 @@ h3 {
     padding: 0 20px 0 20px;
 }
 
+/* Active classes */
+.navbar__active {
+    margin-top: 0 !important;
+}
+
+.hamburger__menu__active {
+    overflow-y: auto !important;
+    width: 250px !important;
+}
+
+.page__fade__active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+/* Active classes end */
+
 @media screen and (max-width: 760px) {
     #navbar > .container {
         padding: 0;
