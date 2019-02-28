@@ -4,19 +4,25 @@
         <meta charset="UTF-8">
         <title>Navigation Bar + Menu</title>
         <meta name="author" content="David Whitcome"/>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="other_stuff/other_styles.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-        <script type="text/javascript" src="menu.js"></script>
-        <script type="text/javascript" src="hide_on_scroll.js"></script>
+
+        <!-- navbar -->
+        <link rel="stylesheet" type="text/css" href="navbar/navbar_styles.css"/>
+        <script type="text/javascript" src="navbar/menu.js"></script>
+        <script type="text/javascript" src="navbar/hide_on_scroll.js"></script>
+        <!-- navbar end -->
     </head>
     <body>
+
+        <!-- navbar -->
         <div id="navbar">
             <div id="page__fade"></div>
-            <div class="container">
+            <div class="navbar_container">
                 <div id="links">
                     <a href="#" id="menu__button">&#9776;</a>
                     <div id="hamburger__menu">
-                        <img src="menu.jpg"/>
+                        <img src="navbar/menu_image.jpg"/>
                         <ul>
                             <li><a href="#link1">Link1</a></li>
                             <li><a href="#link2">Link2</a></li>
@@ -30,11 +36,13 @@
                 </div>
             </div>
         </div>
+        <!-- navbar end -->
+
+        <!-- example html -->
         <div id="header">
             <h2>Demo. Try shrinking the window size!</h2>
         </div>
         <div class="container">
-            
             <h3 id="link1">Link1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
             <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. </p>
@@ -56,5 +64,7 @@
                     The code for this can be found on <a href="https://github.com/Whit128/navbar-and-menu">GitHub</a>. Feel free to use it!
             </div>
         </div>
+        <!-- example html end -->
+
     </body>
 </html>
