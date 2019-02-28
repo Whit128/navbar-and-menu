@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navbarStyles = window.getComputedStyle(navbar);
 
     // Height of navbar including the bottom margin as a negative number.
-    navbarNegativeHeight = (parseFloat(navbarStyles.getPropertyValue('height')) + parseFloat(navbarStyles.getPropertyValue('border-bottom-width'))) * -1;
+    navbarNegativeHeight = (parseFloat(navbarStyles.getPropertyValue('height')) + 10) * -1; // 10 is for drop shadow
 
     navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
     NavbarLocation();
