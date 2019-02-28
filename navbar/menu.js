@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Setup
     var htmlStyle = document.documentElement.style;
-    var bodyContentStyle = document.getElementById("body__content").style;
+    var bodyStyle = document.body.style;
     var isMenuOpen = 0;
     var scrollPosition;
     var navbar = document.getElementById("navbar");
@@ -40,14 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Lock scrolling when hamburger menu is open. Works on iOS.
     function lockScrolling() {
         scrollPosition = window.pageYOffset;
-        bodyContentStyle.marginTop = -scrollPosition + 'px';
-        bodyContentStyle.position = 'fixed';
+        bodyStyle.marginTop = -scrollPosition + 'px';
+        bodyStyle.position = 'fixed';
     }
 
     // Lock scrolling when hamburger menu is open. Works on iOS.
     function unlockScrolling() {
-        bodyContentStyle.position = '';
-        bodyContentStyle.marginTop = '';
+        bodyStyle.position = '';
+        bodyStyle.marginTop = '0';
         htmlStyle.scrollBehavior = 'unset';
         window.scrollTo(0, scrollPosition);
         htmlStyle.scrollBehavior = 'smooth';
