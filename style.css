@@ -41,7 +41,6 @@ body {
 #navbar {
     top: 0;
     background: #4a148c;
-    background: rgba(74, 20, 140, 1);
     width: 100%;
     height: auto;
     position: fixed;
@@ -275,14 +274,5 @@ h3 {
 
     #davidwhitcome__code {
         padding-bottom: env(safe-area-inset-bottom);
-    }
-}
-
-/* blur effect for browsers that support it (Safari, Edge, etc) */
-@supports ((backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))) {
-    #navbar {
-        background: rgba(74, 20, 140, 0.8);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
     }
 }
