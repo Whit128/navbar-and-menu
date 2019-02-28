@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Menu
     var menu__open = 0;
     function menu__toggle() {
         if (menu__open == 0 && window.getComputedStyle(document.getElementById("page__fade")).opacity == '0') {
@@ -48,15 +47,3 @@ document.addEventListener("DOMContentLoaded", function () {
         menu__toggle();
     };
 });
-
-// // Scroll smoothly when pressing links on navbar
-// $(document).on('click', 'a', function(event){
-//     if ($(this).hasClass("top__button")) {
-//         $('html,body').stop().animate({ scrollTop: 0 }, 500);
-//     } else {
-//         $('html, body').stop().animate({
-//             scrollTop: $($.attr(this, 'href')).offset().top
-//         }, 500);                    
-//     }
-//     return false;
-// });
