@@ -1,49 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Setup
     var menu__open = 0;
+    var navbar = document.getElementById("navbar");
+    var menuButton = document.getElementById("menu__button");
+    var hamburgerMenu = document.getElementById("hamburger__menu");
+    var pageFade = document.getElementById("page__fade");
+    var pageFadeComputedStyle = window.getComputedStyle(pageFade);
+    var hamburgerMenuLinks = hamburgerMenu.getElementsByTagName('a');
+
+    for (a = 0; a < hamburgerMenuLinks.length; a++) {
+        hamburgerMenuLinks[a].onclick = function(){
+            if (window.innerWidth <= 760)
+                menu__toggle();
+        };
+    }
+    // Setup end
+
     function menu__toggle() {
-        if (menu__open == 0 && window.getComputedStyle(document.getElementById("page__fade")).opacity == '0') {
-            document.getElementById("hamburger__menu").style.overflowY = 'auto';
+        if (menu__open == 0 && pageFadeComputedStyle.opacity == '0') {
+            hamburgerMenu.style.overflowY = 'auto';
             document.body.style.overflowY = 'hidden';
-            document.getElementById("hamburger__menu").style.width = '250px';
-            document.getElementById("page__fade").style.display = 'block';
-            document.getElementById("navbar").style.marginTop = '0';
+            hamburgerMenu.style.width = '250px';
+            pageFade.style.display = 'block';
+            navbar.style.marginTop = '0';
             setTimeout( // makes sure that CSS3 animation plays 
                 function() {
-                    document.getElementById("page__fade").style.opacity = '1';
+                    pageFade.style.opacity = '1';
                 }, 0);
-            menu__open=1;
+            menu__open = 1;
         }
-        else if (menu__open == 1  && window.getComputedStyle(document.getElementById("page__fade")).opacity == '1') {
-            document.getElementById("hamburger__menu").style.overflowY = 'hidden';
+        else if (menu__open == 1  && pageFadeComputedStyle.opacity == '1') {
+            hamburgerMenu.style.overflowY = 'hidden';
             document.body.style.overflowY = 'auto';
-            document.getElementById("hamburger__menu").style.width = '0';
-            document.getElementById("page__fade").style.opacity = '0';
-
+            hamburgerMenu.style.width = '0';
+            pageFade.style.opacity = '0';
             setTimeout(
                 function() {
-                    document.getElementById("page__fade").style.display = 'none';
+                    pageFade.style.display = 'none';
                 }, 200);
-            menu__open=0;
+            menu__open = 0;
         }
-        return false;
     }
 
-    document.getElementById("menu__button").onclick = function(){
+    menuButton.onclick = function(){
         event.preventDefault();
         menu__toggle();
     };
 
-    var elements = document.getElementById("hamburger__menu").getElementsByTagName('a')
-
-    var n;
-    for (n = 0; n < elements.length; ++n)
-        elements[n].onclick = function(){
-            if (window.innerWidth <= 760)
-                menu__toggle();
-        };
- 
-
-    document.getElementById("page__fade").onclick = function(){
+    pageFade.onclick = function(){
         menu__toggle();
-    };
+    };  
 });
