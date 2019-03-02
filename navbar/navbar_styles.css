@@ -54,7 +54,8 @@ html {
 }
 
 #links img {
-    width: 250px;
+    width: 70vw;
+    max-width: 300px;
     margin: 0;
     display: none;
 }
@@ -124,7 +125,7 @@ h3 {
 
 .hamburger__menu__active {
     overflow-y: auto !important;
-    width: 250px !important;
+    width: 70vw !important;
 }
 
 .page__fade__active {
@@ -164,6 +165,7 @@ h3 {
         position: absolute;
         top: 0;
         width: 0;
+        max-width: 300px;
         overflow: hidden;
         box-sizing: border-box;
         box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.2);
