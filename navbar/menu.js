@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle the menu open or closed
     function toggleMenu() {
-        if (isMenuOpen == 0 && pageFadeComputedStyle.opacity == '0')
+        if (isMenuOpen == 0)
             openMenu();
-        else if (isMenuOpen == 1  && pageFadeComputedStyle.opacity == '1')
+        else if (isMenuOpen == 1)
             closeMenu();
     }
 
