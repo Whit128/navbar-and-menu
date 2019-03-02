@@ -2,6 +2,7 @@ window.onload = function () {
     // Setup
     var html = document.documentElement;
     var body = document.body;
+    var pageWidth = window.innerWidth;
     var isMenuOpen = 0;
     var scrollPosition;
     var navbar = document.getElementById("navbar");
@@ -66,7 +67,10 @@ window.onload = function () {
         html.style.scrollBehavior = 'smooth';
     }
 
-    window.addEventListener('resize', function () { if (isMenuOpen === 1) closeMenu(); })
+    window.addEventListener('resize', function () {
+        if (isMenuOpen === 1 && window.innerWidth > pageWidth) closeMenu();
+        pageWidth = window.innerWidth;
+    })
     menuButton.onclick = function(){ event.preventDefault(); toggleMenu(); };
     pageFade.onclick = toggleMenu;
 };
