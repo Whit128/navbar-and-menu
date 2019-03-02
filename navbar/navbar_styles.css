@@ -3,7 +3,7 @@ html {
 }
 
 #header {
-    padding-top: 53px; /* Room for navbar */
+    padding-top: 54px; /* Room for navbar */
 }
 
 #navbar {
@@ -37,7 +37,7 @@ html {
 
 #logo {
     margin: 0;
-    line-height: 53px;
+    line-height: 54px;
     white-space: nowrap;
 }
 
@@ -48,7 +48,7 @@ html {
 
 #links {
     margin: 0;
-    line-height: 53px;
+    line-height: 54px;
     float: right;
     transition: 0.2s color;
 }
@@ -108,7 +108,7 @@ html {
     display: none;
     position: relative;
     font-size: 20px;
-    padding: 0 20px;
+    padding: 0 18px;
 }
 
 h3 {
