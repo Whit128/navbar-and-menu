@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     // Setup
     var html = document.documentElement;
     var body = document.body;
@@ -70,4 +70,4 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', function () { if (isMenuOpen === 1) closeMenu(); })
     menuButton.onclick = function(){ event.preventDefault(); toggleMenu(); };
     pageFade.onclick = toggleMenu;
-});
+};
