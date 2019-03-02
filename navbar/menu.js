@@ -32,6 +32,7 @@ window.onload = function () {
         pageFade.classList.add('page__fade__active');
         navbar.classList.add('navbar__active');
         menuButton.classList.add('menu__button__active');
+        menuButton.innerHTML = '&#10006;';
         lockScrolling();
         isMenuOpen = 1;
     }
@@ -41,6 +42,7 @@ window.onload = function () {
         pageFade.classList.remove('page__fade__active');
         navbar.classList.remove('navbar__active');
         menuButton.classList.remove('menu__button__active');
+        menuButton.innerHTML = '&#9776;';
         navbar.style.marginTop = '0';
         unlockScrolling();
         isMenuOpen = 0;
