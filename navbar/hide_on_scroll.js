@@ -23,7 +23,10 @@ function NavbarLocation() {
     if (navbar !== null && scroll >= 0) {
         navbarMargin = parseFloat(window.getComputedStyle(navbar).getPropertyValue('margin-top'));
 
-        if (scroll > position) { // Scrolling down  
+        if (scroll < 0) {
+            navbar.style.marginTop = "0px";
+        }
+        else if (scroll > position) { // Scrolling down  
             if (navbarMargin > navbarNegativeHeight) {
                 navbar.style.marginTop = Math.max(navbarNegativeHeight, navbarMargin - (scroll - position)) + "px";
             } 
