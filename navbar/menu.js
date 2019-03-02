@@ -21,20 +21,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle the menu open or closed
     function toggleMenu() {
-        if (isMenuOpen == 0 && pageFadeComputedStyle.opacity == '0') {
-            hamburgerMenu.classList.add('hamburger__menu__active');
-            pageFade.classList.add('page__fade__active');
-            navbar.classList.add('navbar__active');
-            lockScrolling();
-            isMenuOpen = 1;
-        }
-        else if (isMenuOpen == 1  && pageFadeComputedStyle.opacity == '1') {
-            hamburgerMenu.classList.remove('hamburger__menu__active');
-            pageFade.classList.remove('page__fade__active');
-            navbar.classList.remove('navbar__active');
-            unlockScrolling();
-            isMenuOpen = 0;
-        }
+        if (isMenuOpen == 0 && pageFadeComputedStyle.opacity == '0')
+            openMenu();
+        else if (isMenuOpen == 1  && pageFadeComputedStyle.opacity == '1')
+            closeMenu();
+    }
+
+    function openMenu() {
+        hamburgerMenu.classList.add('hamburger__menu__active');
+        pageFade.classList.add('page__fade__active');
+        navbar.classList.add('navbar__active');
+        lockScrolling();
+        isMenuOpen = 1;
+    }
+
+    function closeMenu() {
+        hamburgerMenu.classList.remove('hamburger__menu__active');
+        pageFade.classList.remove('page__fade__active');
+        navbar.classList.remove('navbar__active');
+        unlockScrolling();
+        isMenuOpen = 0;
     }
 
     // Lock scrolling when hamburger menu is open. Works on iOS.
@@ -43,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         html.style.height = pageHeight + 'px';
         body.style.marginTop = -scrollPosition + 'px';
+        body.style.overflowY = 'hidden';
         body.style.position = 'fixed';
     }
 
@@ -50,12 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function unlockScrolling() {
         body.style.position = '';
         body.style.marginTop = '';
+        body.style.overflowY = '';
         html.style.height = '';
         html.style.scrollBehavior = 'unset';
         window.scrollTo(0, scrollPosition);
         html.style.scrollBehavior = 'smooth';
     }
 
+    window.addEventListener('resize', function () { if (isMenuOpen === 1) closeMenu(); })
     menuButton.onclick = function(){ event.preventDefault(); toggleMenu(); };
     pageFade.onclick = toggleMenu;
 });
