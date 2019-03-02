@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.add('hamburger__menu__active');
         pageFade.classList.add('page__fade__active');
         navbar.classList.add('navbar__active');
+        menuButton.classList.add('menu__button__active');
         lockScrolling();
         isMenuOpen = 1;
     }
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.remove('hamburger__menu__active');
         pageFade.classList.remove('page__fade__active');
         navbar.classList.remove('navbar__active');
+        menuButton.classList.remove('menu__button__active');
         navbar.style.marginTop = '0';
         unlockScrolling();
         isMenuOpen = 0;
