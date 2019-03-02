@@ -8,7 +8,6 @@ window.onload = function () {
     var menuButton = document.getElementById("menu__button");
     var hamburgerMenu = document.getElementById("hamburger__menu");
     var pageFade = document.getElementById("page__fade");
-    var pageFadeComputedStyle = window.getComputedStyle(pageFade);
 
     var hamburgerMenuLinks = hamburgerMenu.getElementsByTagName('a');
     for (a = 0; a < hamburgerMenuLinks.length; a++) {
